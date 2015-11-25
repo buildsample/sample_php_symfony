@@ -1,13 +1,13 @@
 language: php
-
-
-
 php:
   - 5.6
 
 addons:
   hosts:
     local.symfony2-standard-template: 127.0.0.1
+
+env:
+  - secure: H5jkqKx3vEXdPqv5Fl9c7ateJEUZ+kuDCyHrS9DkfqyMAxOE4xFNiybr6hx7nS6XzuqrQ9Fm639uy5yF+YS+8ekIqG+yaDeFalGw+G3bUhgwDr7ukmlWT+ffkZIrtOeVhIwka1SzSXSv7dUtWWxN7Nbldr5nOz9vqkH3fV0JGdtgBxThkFQ1i7BjxCZ63qU2V/NlSxUkV0DsBeFglka1bdYCIOU22yl63R0eWnECeoX3phbnAk39BSJPnymPR7xQ92rt1ra86IJMsQJq9ViyzLyjFPHU7MemQY+LCv6og79btyPYu8/kOvYgDQygmhZYr1aO2iTdfpCWBxvB4hxeqA== 
 
 before_install:
   - sudo apt-get update
@@ -21,6 +21,7 @@ before_install:
   - composer install --prefer-source --no-interaction --optimize-autoloader
 
 before_script:
+  - echo $key1
   - echo "xdebug.max_nesting_level = 500" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 
 
